@@ -40,4 +40,4 @@ docker run -it --rm --name client --network somenetwork client
 ```sh
 curl http://client-nginx
 ```
-
+![img](https://github.com/JadKHaddad/Nginx-mTLS/blob/main/assets/image.jpg?raw=true)
