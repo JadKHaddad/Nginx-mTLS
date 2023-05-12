@@ -1,0 +1,16 @@
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y nginx
+
+COPY certs/server.crt /etc/nginx/server.crt
+COPY certs/server.key /etc/nginx/server.key
+COPY certs/root.crt /etc/nginx/root.crt
+
+COPY server-nginx.conf /etc/nginx/nginx.conf
+
+CMD ["nginx", "-g", "daemon off;"]
+
+# docker build -t server-nginx -f Dockerfile.server-nginx .
+# docker run -it --rm --name server-nginx --network somenetwork server-nginx
+
+# docker build -t server-nginx -f Dockerfile.server-nginx .; docker run -it --rm --name server-nginx --network somenetwork server-nginx

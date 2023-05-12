@@ -1,0 +1,6 @@
+FROM nginx:alpine
+
+# docker build -t server -f Dockerfile.server .
+# docker run -it --rm --name server --network somenetwork server
+
+# docker build -t server -f Dockerfile.server .; docker run -it --rm --name server --network somenetwork server

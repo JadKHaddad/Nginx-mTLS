@@ -1,0 +1,10 @@
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y curl
+
+CMD ["bin/bash"]
+
+# docker build -t client -f Dockerfile.client .
+# docker run -it --rm --name client --network somenetwork client
+
+# docker build -t client -f Dockerfile.client .; docker run -it --rm --name client --network somenetwork client
