@@ -1,9 +1,12 @@
+Get yourself a root CA certificate.
 ```sh
 step ca root certs/root.crt --ca-url <ca-url> --fingerprint <fingerprint>
 ```
+Create the server certificate. ```server-reverse-proxy``` is the hostname of the server and will be used in ```client-nginx.conf``` to verify the server certificate.
 ```sh
 step ca certificate "server-reverse-proxy" certs/server.crt certs/server.key --ca-url <ca-url> --root certs/root.crt   
 ```
+Create the client certificate.
 ```sh
 step ca certificate "client" certs/client.pem certs/client.key --ca-url <ca-url> --root certs/root.crt
 ```
